@@ -4,17 +4,17 @@ class Polygon {
     this.sides = sides;
   }
 
-get countSides() {
-  this.sides.length;
-}
-
-get perimeter() {
-  let sum = 0;
-  for (i = 0; i < this.countSides; i++) {
-    sum += this.sides[i];
+  get countSides() {
+    return this.sides.length;
   }
-  return sum;
-}
+
+  get perimeter() {
+    let sum = 0;
+    for (let i = 0; i < this.countSides; i++) {
+      sum = sum + this.sides[i];
+    }
+    return sum;
+  }
 }
 
 class Triangle extends Polygon {
@@ -35,7 +35,7 @@ class Triangle extends Polygon {
   class Square extends Polygon {
     get isValid() {
       let truthArray = [];
-      for (i= 0; i < this.countSides; i++) {
+      for (let i= 0; i < this.countSides; i++) {
         truthArray.push(this.sides[i] === this.perimeter/4);
       }
       if (truthArray.includes(false)) {
